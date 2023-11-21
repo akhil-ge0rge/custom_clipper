@@ -42,7 +42,14 @@ class _HomePageState extends State<HomePage> {
               clipper: WaveClipper(),
               child: Container(
                 height: 200,
-                color: Colors.red,
+                color: Colors.red.withOpacity(0.5),
+              ),
+            ),
+            ClipPath(
+              clipper: WaveClipper(),
+              child: Container(
+                height: 180,
+                color: Colors.red.withOpacity(0.5),
               ),
             ),
           ],
@@ -63,7 +70,7 @@ class WaveClipper extends CustomClipper<Path> {
         firstStart.dx, firstStart.dy, firstEnd.dx, firstEnd.dy);
     var secondStart =
         Offset(size.width - (size.width / 3.24), size.height - 105);
-    var secondEnd = Offset(size.width, size.height - 10);
+    var secondEnd = Offset(size.width, size.height - 50);
     path.quadraticBezierTo(
         secondStart.dx, secondStart.dy, secondEnd.dx, secondEnd.dy);
     path.lineTo(size.width, 0);
